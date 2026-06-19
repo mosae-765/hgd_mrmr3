@@ -1,0 +1,264 @@
+@import url('https://cdn.jsdelivr.net/gh/MonadABXY/mona-font/web/mona.css');
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body {
+  background: #f7f7f7;
+  font-family: 'Mona12', monospace;
+  color: #535353;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Start Screen ── */
+#start-screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.start-container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-dino {
+  width: 110px;
+  height: 118px;
+  margin: 0 auto 20px;
+  image-rendering: pixelated;
+}
+
+h1 {
+  font-size: 2.6rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 32px;
+  color: #205c81;
+}
+
+/* Asset Panel */
+.asset-panel {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.asset-panel h2 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #777;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.folder-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.folder-name {
+  font-size: 0.82rem;
+  color: #999;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.asset-status {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+.asset-status .ok     { color: #2a7a2a; }
+.asset-status .miss   { color: #999; }
+
+/* Naming guide */
+.naming-guide {
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+}
+.naming-guide summary {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #535353;
+  user-select: none;
+  list-style: none;
+}
+.naming-guide summary::-webkit-details-marker { display: none; }
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.guide-col strong {
+  display: block;
+  font-size: 0.78rem;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.guide-col ul { list-style: none; }
+.guide-col li { font-size: 0.73rem; color: #666; margin-bottom: 3px; }
+.guide-col li em { color: #999; font-style: normal; font-size: 0.68rem; }
+.guide-note {
+  font-size: 0.69rem;
+  color: #aaa;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.guide-col code {
+  background: #f0f0f0;
+  padding: 1px 3px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  color: #333;
+}
+
+/* Render mode toggle */
+.render-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.render-label {
+  font-size: 0.85rem;
+  color: #555;
+  flex-shrink: 0;
+}
+.mode-toggle {
+  display: flex;
+  border: 1.5px solid #535353;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.mode-btn {
+  background: #535353;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  font-size: 0.82rem;
+  font-family: 'Mona12', monospace;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.mode-btn + .mode-btn { border-left: 1px solid #e2e2e2; }
+.mode-btn.is-active { background: #fff; color: #535353; }
+
+/* Buttons */
+.btn-primary {
+  background: #205c81;
+  color: #fff;
+  border: none;
+  padding: 15px 44px;
+  font-size: 1.1rem;
+  font-family: 'Mona12', monospace;
+  letter-spacing: 0.08em;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: background 0.15s;
+  display: block;
+  width: 100%;
+  box-shadow: 
+    0 -4px 0 0 #205c81,  /* 상단 border */
+    0 4px 0 0 #205c81,   /* 하단 border */
+    -4px 0 0 0 #205c81,  /* 좌측 border */
+    4px 0 0 0 #205c81;   /* 우측 border */
+}
+.btn-primary:hover { background: #333; box-shadow: 
+    0 -4px 0 0 #333,  /* 상단 border */
+    0 4px 0 0 #333,   /* 하단 border */
+    -4px 0 0 0 #333,  /* 좌측 border */
+    4px 0 0 0 #333;   /* 우측 border */}
+
+.btn-secondary {
+  background: #fff;
+  color: #535353;
+  border: 2px solid #535353;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-family: 'Mona12', monospace;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.btn-secondary:hover { background: #535353; color: #fff; }
+
+.hint {
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+/* ── Game Screen ── */
+#game-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  position: relative;
+}
+
+#game-canvas {
+  display: block;
+  border: 2px solid #535353;
+}
+#game-canvas.pixelated {
+  image-rendering: pixelated;
+}
+
+.btn-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #999;
+  padding: 5px 11px;
+  font-size: 0.75rem;
+  font-family: 'Mona12', monospace;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-back:hover { background: #eee; color: #555; }
+
+.game-hint {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #bbb;
+}

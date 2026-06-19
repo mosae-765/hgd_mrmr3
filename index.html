@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현광등 공룡 게임</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Start Screen ── -->
+  <div id="start-screen">
+    <div class="start-container">
+
+      <h1>현광등 공룡 게임</h1>
+
+      <div class="asset-panel">
+        <h2>현뭉이 말랑말랑말랑말랑말랑말랑말랑말랑</h2>
+        <p class="desc">
+          기본 에셋 출처: o_lobster, Pixel Frog
+        </p>
+        <img src="default_assets\dino_run1.png" style="width: 100%; text-align: center;">
+        <div class="folder-row" style="display:none">
+          <button id="folder-btn" class="btn-secondary"></button>
+          <input type="file" id="folder-input" webkitdirectory accept=".png,.PNG" style="display:none">
+        </div>
+
+        <div id="asset-status" class="asset-status"></div>
+      </div>
+
+      <div class="render-mode" style="display:none">
+        <div class="mode-toggle">
+          <button id="mode-smooth" class="mode-btn">일반 이미지</button>
+          <button id="mode-pixel"  class="mode-btn is-active">픽셀 아트</button>
+        </div>
+      </div>
+
+      <button id="play-btn" class="btn-primary">게임 시작</button>
+      <p class="hint">↑ / SPACE : 점프 &nbsp;·&nbsp; ↓ : 숙이기 &nbsp;·&nbsp; 더블 점프 가능</p>
+    </div>
+  </div>
+
+  <!-- ── Game Screen ── -->
+  <div id="game-screen" style="display:none">
+    <button id="back-btn" class="btn-back">← 처음으로</button>
+    <canvas id="game-canvas"></canvas>
+    <p class="game-hint">↑ / SPACE : 점프 &nbsp;·&nbsp; ↓ : 숙이기</p>
+  </div>
+
+  <script src="assets.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
