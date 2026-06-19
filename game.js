@@ -29,11 +29,7 @@ function computeDinoSizes(assets) {
   }
 
   const stand = fitToMaxH('dino_run1', Math.round(44 * SCALE), Math.round(47 * SCALE));
-
-  // duck 이미지가 사용자 제공인 경우 그 크기 사용, 아니면 stand에서 파생
-  const duck = assets.isActualImage('dino_duck1')
-    ? fitToMaxH('dino_duck1', Math.round(59 * SCALE), Math.round(30 * SCALE))
-    : { w: Math.round(stand.w), h: Math.round(stand.h * 0.9) };
+  const duck = { w: Math.round(stand.w), h: Math.round(stand.h * 0.9) };
 
   return { stand, duck };
 }
